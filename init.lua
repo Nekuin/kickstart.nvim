@@ -266,7 +266,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -332,6 +332,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- C-u + C-d but also zz
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-n>', '<Cmd>Neotree toggle<CR>')
+vim.keymap.set('n', '<Tab>', '<Cmd>bnext<CR>')
+vim.keymap.set('n', '<S-Tab>', '<Cmd>bprev<CR>')
+vim.keymap.set('n', '<leader>x', '<Cmd>bwipeout<CR>')
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -350,10 +354,14 @@ require('telescope').setup {
   defaults = {
     mappings = {
       i = {
-        ['<C-u>'] = false,
-        ['<C-d>'] = false,
       },
     },
+    layout_config = {
+      horizontal = {
+        prompt_position = "top"
+      }
+    },
+    sorting_strategy = "ascending"
   },
 }
 
@@ -574,7 +582,7 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  -- tsserver = {},
+  tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls = {
