@@ -267,6 +267,8 @@ require('lazy').setup({
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   { import = 'custom.plugins' },
+  
+  { "prettier/vim-prettier" },
 }, {})
 
 -- [[ Setting options ]]
@@ -332,10 +334,15 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- C-u + C-d but also zz
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
+-- Neotree toggle
 vim.keymap.set('n', '<C-n>', '<Cmd>Neotree toggle<CR>')
+-- Next & prev tab
 vim.keymap.set('n', '<Tab>', '<Cmd>bnext<CR>')
 vim.keymap.set('n', '<S-Tab>', '<Cmd>bprev<CR>')
+-- close tab
 vim.keymap.set('n', '<leader>x', '<Cmd>bwipeout<CR>')
+-- format (prettier)
+vim.keymap.set('n', '<leader>fm', '<Cmd>Prettier<CR>')
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
