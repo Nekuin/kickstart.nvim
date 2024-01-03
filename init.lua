@@ -269,6 +269,7 @@ require('lazy').setup({
   { import = 'custom.plugins' },
   
   { "prettier/vim-prettier" },
+  { "github/copilot.vim" }
 }, {})
 
 -- [[ Setting options ]]
@@ -282,6 +283,9 @@ vim.o.hlsearch = false
 vim.wo.number = true
 -- Enable relative line numbers
 vim.wo.relativenumber = true
+-- Copilot fixes
+vim.g.copilot_no_tab_map = true
+vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { silent = true })
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
