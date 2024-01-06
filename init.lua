@@ -345,7 +345,7 @@ vim.keymap.set('n', '<C-n>', '<Cmd>Neotree toggle<CR>')
 vim.keymap.set('n', '<Tab>', '<Cmd>bnext<CR>')
 vim.keymap.set('n', '<S-Tab>', '<Cmd>bprev<CR>')
 -- close tab
-vim.keymap.set('n', '<leader>x', '<Cmd>bwipeout<CR>')
+vim.keymap.set('n', '<leader>x', '<Cmd>bdelete<CR>')
 -- format (prettier)
 vim.keymap.set('n', '<leader>fm', '<Cmd>Prettier<CR>')
 
